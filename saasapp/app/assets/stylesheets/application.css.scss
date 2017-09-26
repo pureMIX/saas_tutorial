@@ -21,57 +21,64 @@
 
 //Typography styles
 h1, h2, h3{
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 //Background Gradient
 .navbar, .home-callout{
-    background: #00c6ff;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00c6ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 //Navbar Styles
 .navbar{
-    border: none;
+  border: none;
 }
 
 .navbar-brand{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
 }
 
 .navbar-default .navbar-brand, 
 .navbar-default .navbar-nav > li > a{
+  color: white;
+  &:hover{
     color: white;
-    &:hover{
-      color: white;
-      opacity: 0.75;
-    }
+    opacity: 0.75;
+  }
 }
 
 .navbar-default .navbar-toggle .icon-bar{
-    background-color: white;
+  background-color: white;
 }
 
 .navbar-default .navbar-toggle{
-    border: 2px solid white;
-    &:hover, &:focus{
-        background-color: #00c6ff;
-    }
+  border: 2px solid white;
+  &:hover, &:focus{
+      background-color: #00c6ff;
+  }
 }
 
 
 //Home Page stlye
 .home-callout{
-    color: white;
-    margin-top: -20px;
-    padding-top: 50px;
-    padding-bottom: 100px;
+  color: white;
+  margin-top: -20px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
-.alert-notice{
-    display :none;
+.flash-container{
+  position:absolute;
+  width:100%;
+}
+.alert-notice, .alert-alert{
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  margin-top: -14px;
 }
 .home-signup-links{
-    margin-top: 30px;
+  margin-top: 30px;
 }
