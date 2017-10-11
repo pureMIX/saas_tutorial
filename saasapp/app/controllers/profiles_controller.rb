@@ -13,11 +13,33 @@ class ProfilesController < ApplicationController
     @profile = @user.build_profile(profile_params)
     if @profile.save
       flash[:success] = "Profile Updated!"
-      redirect_to user_path(params[:user_id])
+      redirect_to user_path(id: params[:user_id])
     else
       render action :new
     end
   end
+  # Get to /users/:user_id/profile/edit
+  def edit
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
+  end
+  # PATCH/POST to /users/:user_id/profile
+  def update
+    # Retrieve user from database
+    @user = User.find(params[:user_id])
+    # Retrieve profile related to the user
+    @profile = @user.profile
+    # Update profile of the user by mass assignment
+    if @profile.update_attributes(profile_params)
+      flash[:success]= "Profile updated!"
+      #Redirect user to profile page
+      redirect_to user_path(id: params[:user_id])
+    else
+      flash[:error]= "Profile failed to load!!"
+      render action: :edit
+    end
+  end
+  
   private 
     # If you collect data from form then 
     # we need to use strong parameters 
